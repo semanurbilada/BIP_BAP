@@ -1,9 +1,30 @@
+import glob
+import random
 from ultralytics import YOLO
 
-#TODO: global images
-#TODO: custom path for runs
+# Configurations
+WEIGHTS_PATH = '../weights/best_bccd.pt'
+TEST_IMAGES_PATH = './test-images/*.jpg'
+OUTPUT_PROJECT = './'
+OUTPUT_NAME = 'outputs'
+CONFIDENCE_THRESHOLD = 0.5
 
-model = YOLO('../weights/best_bccd.pt')
-img = "../test-images/BloodImage_00007.jpg"
+# Load the YOLO model
+model = YOLO(WEIGHTS_PATH)
 
-result = model.predict(source=img, conf=0.5, save=True)
+# Gather test images
+images_path = glob.glob(TEST_IMAGES_PATH)
+random.shuffle(images_path)
+
+# Run predictions for each image
+for img_path in images_path:
+    result = model.predict(
+        source=img_path, 
+        conf=CONFIDENCE_THRESHOLD, 
+        save=True, 
+        project=OUTPUT_PROJECT, 
+        name=OUTPUT_NAME,
+        exist_ok=True  # Outputs in the same folder
+    )
+
+print("\nDone!\n")
