@@ -1,0 +1,10 @@
+numpy==1.24.1
+opencv-python==4.7.0.72
+opencv-python-headless==4.8.0.74
+pandas==2.1.4
+roboflow==1.1.14
+torch==2.1.2
+torchvision==0.16.2
+ultralytics==8.0.196
+yolov5==7.0.13
+yolov9==0.0.1
