@@ -2,6 +2,9 @@ import glob
 import random
 from ultralytics import YOLO
 
+#ERROR: yolov8(code) - yolov5(weight) is not suitable together
+#TODO: https://docs.ultralytics.com/models/yolov5/#usage-examples
+
 # Configurations
 WEIGHTS_PATH = '../weights/best_bccd.pt'
 TEST_IMAGES_PATH = './test-images/*.jpg'
