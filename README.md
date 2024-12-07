@@ -53,8 +53,8 @@ BIP_BAP/
 ```
 
 - bccd/: Contains Blood Cell Cound and Detection side of the project.
-- best_bccd_v0.pt: Version 0 of the first dataset from Roboflow. (yolov5n - T4 GPU)
-- best_bccd_v1.pt: Version 1 of the first dataset from Roboflow. (yolov5l - A100 GPU - 50 epoch - 8 batch)
+- best_bccd_v0.pt: Version 0 of the first dataset from Roboflow. (yolov8 - T4 GPU)
+- best_bccd_v1.pt: Version 1 of the first dataset from Roboflow. (yolov5l - A100 GPU)
 - requirements.txt: Lists project dependencies.
 
 ## How To Run?
