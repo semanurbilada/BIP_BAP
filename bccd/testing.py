@@ -5,8 +5,10 @@ from ultralytics import YOLO
 #ERROR: yolov8(code) - yolov5(weight) is not suitable together
 #TODO: https://docs.ultralytics.com/models/yolov5/#usage-examples
 
+#TODO: Bu kod yolov8 için, yolov5 için de ayrı deneme kodu: yolov5, yolov8...
+
 # Configurations
-WEIGHTS_PATH = '../weights/best_bccd.pt'
+WEIGHTS_PATH = '../weights/best_bccd_v0.pt'
 TEST_IMAGES_PATH = './test-images/*.jpg'
 OUTPUT_PROJECT = './'
 OUTPUT_NAME = 'outputs'
