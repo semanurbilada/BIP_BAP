@@ -1,4 +1,4 @@
-import glob, torch, random
+import glob, random, torch
 
 # Configurations
 WEIGHTS_PATH = './weights/best_bccd_v1.pt'
@@ -23,9 +23,6 @@ for img_path in images_path:
     results = model(img_path)
 
     # Save predictions
-    results.save(
-        save_dir=output_path, 
-        exist_ok=True
-    )
+    results.save(save_dir=output_path, exist_ok=True)
 
 print("\nDone!\n")

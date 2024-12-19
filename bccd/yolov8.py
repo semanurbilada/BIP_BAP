@@ -1,5 +1,4 @@
-import glob
-import random
+import glob, random
 from ultralytics import YOLO
 
 # Configurations
