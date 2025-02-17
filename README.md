@@ -42,9 +42,10 @@ BIP_BAP/
 │   ├── outputs-v5/
 │   ├── outputs-v8/
 │   ├── test-images/
-│   ├── weights/
+│   └── weights/
 │       ├── best_bccd_v0.pt
 │       ├── best_bccd_v1.pt
+│       └── best_bccd_v3.pt
 │   └── testing.py
 │
 ├── .gitignore
@@ -58,6 +59,7 @@ BIP_BAP/
 - /outputs-v5/: Contains outputs of the yolov8 test results.
 - best_bccd_v0.pt: Version 0 of the first dataset from Roboflow. (yolov8 - T4 GPU)
 - best_bccd_v1.pt: Version 1 of the first dataset from Roboflow. (yolov5l - A100 GPU)
+- best_bccd_v3.pt: Version 1 of the first dataset from Roboflow. (yolov5l - A100 GPU)
 - requirements.txt: Lists project dependencies.
 
 ## How To Run?
