@@ -5,7 +5,7 @@ WEIGHTS_PATH = './weights/best_bccd_v3.pt'
 TEST_IMAGES_PATH = './test-images/*.jpg'
 OUTPUT_PROJECT = './'
 OUTPUT_NAME = 'outputs-v5'
-#CONFIDENCE_THRESHOLD = 0.5
+# CONFIDENCE_THRESHOLD = 0.5
 
 # Load the YOLOv5 model
 YOLO = torch.hub.load
@@ -23,6 +23,9 @@ for img_path in images_path:
     results = model(img_path)
 
     # Save predictions
-    results.save(save_dir=output_path, exist_ok=True)
+    results.save(
+        save_dir=output_path, 
+        exist_ok=True
+    )
 
 print("\nDone!\n")
