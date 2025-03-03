@@ -11,8 +11,8 @@ for fold in range(num_folds):
 
     # results_file = f'yolov5/runs/train/BCCM_fold_{fold}/results.csv'
     # print(os.listdir(f'yolov5/runs/train/BCCM_fold_{fold}/'))
-    results_file = f'../results/kfold_9_yolov5l_100epochs/BCCM_fold_{fold}/results.csv'
-    print(os.listdir(f'../results/kfold_9_yolov5l_100epochs/BCCM_fold_{fold}/'))
+    results_file = f'../results/kfold_yolov5l_100epochs/BCCM_fold_{fold}/results.csv'
+    print(os.listdir(f'../results/kfold_yolov5l_100epochs/BCCM_fold_{fold}/'))
 
     if file_exists(results_file):
         results = pd.read_csv(results_file)
