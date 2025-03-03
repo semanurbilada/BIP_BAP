@@ -2,9 +2,9 @@ import glob, random
 from ultralytics import YOLO
 
 # Configurations
-WEIGHTS_PATH = './weights/best_bccd_v0.pt'
-TEST_IMAGES_PATH = './test-images/*.jpg'
-OUTPUT_PROJECT = './'
+WEIGHTS_PATH = '../weights/best_bccd_v0.pt'
+TEST_IMAGES_PATH = '../test-images/*.jpg'
+OUTPUT_PROJECT = '../results/'
 OUTPUT_NAME = 'outputs-v8'
 CONFIDENCE_THRESHOLD = 0.5
 
