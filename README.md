@@ -1,10 +1,10 @@
+<h1 align="center">BIP BAP</h1>
+
 <div align="center">
 <img src="https://cdn-icons-png.flaticon.com/512/14784/14784041.png" width="100" height="100" alt="icon">
 </div>
 
-<h1 align="center">BIP BAP</h1>
-
-<div align="center">
+<div align="">
 
 ## Biomedical Image Processing BAP (Scientific Research Project)
 </div>
@@ -20,17 +20,18 @@
 ## Purpose
 <div align="justify">
 
-This project aims to explore biomedical image processing applications, focusing on the detection and counting of blood cells using the Blood Cell Counting and Detection (BCCD) dataset. The system is designed to automate and enhance accuracy in biomedical imaging tasks, with the initial training conducted on Google Colab. 
+This project aims to explore biomedical image processing applications, focusing on the detection and counting of blood cells using the Blood Cell Counting and Detection (BCCD) dataset. The system is designed to automate and enhance accuracy in biomedical imaging tasks, with the initial training conducted on Google Colab.
 
-As part of the Piri Reis University Scientific Research Project (BAP), this initiative also reflects the academic contributions of the scholar students.
+`As part of the Piri Reis University Scientific Research Project (BAP), this initiative also reflects the academic contributions of the scholar students, particularly in applying and practicing Machine Learning concepts`.
 </div>
 
 ## Features
 - Detection and count for blood cell (BCCD).
-- Performance Measurement: Latency - Throughput - Reliability.
+- Performance Measurement: Latency, throughput, reliability.
+- K-Fold Cross Validation technique and integration with YOLO.
 
 ### Notes
-- The yolov5m (medium) model was tested, but based on the results, the yolov5s (small) or yolov5l (large) models are recommended for better performance.
+- The yolov5m (medium) model was tested, but based on the results, the yolov5s (small) or yolov5l (large) models are decided to use for better performance.
 
 ## Project Structure
 
@@ -119,6 +120,6 @@ This project is licensed under the MIT License - see the [LICENSE](https://githu
 
 ## References
 
-- [BCCD Dataset](https://github.com/Shenggan/BCCD_Dataset)
+- [BCCD Dataset - GitHub](https://github.com/Shenggan/BCCD_Dataset)
 - [BCCD Dataset - Roboflow](https://public.roboflow.com/object-detection/bccd/3)
 - [Custom Roboflow Dataset](https://universe.roboflow.com/prutengiz/bccd-dataset-v0/dataset/2)
