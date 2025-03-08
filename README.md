@@ -4,7 +4,7 @@
 <img src="https://cdn-icons-png.flaticon.com/512/14784/14784041.png" width="100" height="100" alt="icon">
 </div>
 
-<div align="">
+<div align="center">
 
 ## Biomedical Image Processing BAP (Scientific Research Project)
 </div>
@@ -22,7 +22,7 @@
 
 This project aims to explore biomedical image processing applications, focusing on the detection and counting of blood cells using the Blood Cell Counting and Detection (BCCD) dataset. The system is designed to automate and enhance accuracy in biomedical imaging tasks, with the initial training conducted on Google Colab.
 
-`As part of the Piri Reis University Scientific Research Project (BAP), this initiative also reflects the academic contributions of the scholar students, particularly in applying and practicing Machine Learning concepts`.
+As part of the Piri Reis University Scientific Research Project (BAP), this initiative also reflects the academic contributions of the scholar students, particularly in `applying and practicing Machine Learning concepts`.
 </div>
 
 ## Features
