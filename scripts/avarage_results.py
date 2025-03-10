@@ -6,6 +6,12 @@ num_folds = 5
 fold_results = []
 file_exists = os.path.exists
 
+best_fold = None
+
+# Any valid value will be considered = -1
+best_mAP50 = -1
+best_mAP5095 = -1
+
 for fold in range(num_folds):
     print(f"\n=== Fold {fold + 1} ===")
 
@@ -37,6 +43,14 @@ for fold in range(num_folds):
                 'mAP50-95': mAP5095
             })
             print(f"Fold {fold + 1} - Precision: {precision}, Recall: {recall}, mAP@0.5: {mAP50}, mAP@0.5:0.95: {mAP5095}")
+
+            # Update best fold if mAP50 is highest
+            # if (mAP50 > best_mAP50) or (mAP50 == best_mAP50 and mAP5095 > best_mAP5095):
+            if mAP50 > best_mAP50:
+                best_fold = fold + 1
+                best_mAP50 = mAP50
+                best_mAP5095 = mAP5095
+
         else:
             print(f"Some metrics are missing in Fold {fold + 1} results.")
     else:
@@ -56,4 +70,20 @@ if fold_results:
     print(f"Overall Average mAP@0.5: {avg_map50:.4f}")
     print(f"Overall Average mAP@0.5:0.95: {avg_map5095:.4f}")
 else:
-    print("No results available for averages.")
+    print("\nNo results available for averages.")
+
+# Print overall best fold
+if best_fold is not None:
+    print(f"\n=== Best Performing Fold: Fold {best_fold} ===")
+    print(f"Best Fold mAP@0.5: {best_mAP50:.4f}")
+    print(f"Best Fold mAP@0.95: {best_mAP5095:.4f}")
+
+    # Locate best.pt file
+    best_model_path = f'../results/kfold_yolov5l_100epochs/BCCM_fold_{best_fold - 1}/best.pt'
+    
+    if file_exists(best_model_path):
+        print(f"Best model found at: {best_model_path}\n")
+    else:
+        print(f"Warning: best.pt file not found at {best_model_path}\n")
+else:
+    print("\nNo best performing fold could be determined.")
