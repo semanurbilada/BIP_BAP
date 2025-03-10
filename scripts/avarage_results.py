@@ -7,33 +7,32 @@ fold_results = []
 file_exists = os.path.exists
 
 best_fold = None
-
-# Any valid value will be considered = -1
-best_mAP50 = -1
+best_mAP50 = -1  # Any valid value will be considered
 best_mAP5095 = -1
 
 for fold in range(num_folds):
     print(f"\n=== Fold {fold + 1} ===")
 
-    # results_file = f'yolov5/runs/train/BCCM_fold_{fold}/results.csv'
-    # print(os.listdir(f'yolov5/runs/train/BCCM_fold_{fold}/'))
+    # Define the result file paths
     results_file = f'../results/kfold_yolov5l_100epochs/BCCM_fold_{fold}/results.csv'
-    print(os.listdir(f'../results/kfold_yolov5l_100epochs/BCCM_fold_{fold}/'))
+    fold_dir = f'../results/kfold_yolov5l_100epochs/BCCM_fold_{fold}/'
 
+    # Check if results file exists
     if file_exists(results_file):
+        # Read CSV into a DataFrame
         results = pd.read_csv(results_file)
         print(f"Columns in Fold {fold + 1}: {results.columns.tolist()}")
-        
-        results.columns = results.columns.str.strip()
-        last_epoch_results = results.iloc[-1]
 
-        # Column names from results.csv
-        precision = last_epoch_results.get("metrics/precision", None)
-        recall = last_epoch_results.get("metrics/recall", None)
+        results.columns = results.columns.str.strip()  # Strip column names
+        last_epoch_results = results.iloc[-1]  # Get the last row
 
-        mAP50 = last_epoch_results.get("metrics/mAP_0.5", None)
-        mAP5095 = last_epoch_results.get("metrics/mAP_0.5:0.95", None)
+        # Extract values from the last row
+        precision = last_epoch_results.get("metrics/precision")
+        recall = last_epoch_results.get("metrics/recall")
+        mAP50 = last_epoch_results.get("metrics/mAP_0.5")
+        mAP5095 = last_epoch_results.get("metrics/mAP_0.5:0.95")
 
+        # If no metric is missing, add the fold results
         if None not in [precision, recall, mAP50, mAP5095]:
             fold_results.append({
                 'fold': fold + 1,
@@ -44,8 +43,7 @@ for fold in range(num_folds):
             })
             print(f"Fold {fold + 1} - Precision: {precision}, Recall: {recall}, mAP@0.5: {mAP50}, mAP@0.5:0.95: {mAP5095}")
 
-            # Update best fold if mAP50 is highest
-            # if (mAP50 > best_mAP50) or (mAP50 == best_mAP50 and mAP5095 > best_mAP5095):
+            # Update best fold if mAP50 is higher
             if mAP50 > best_mAP50:
                 best_fold = fold + 1
                 best_mAP50 = mAP50
@@ -56,14 +54,14 @@ for fold in range(num_folds):
     else:
         print(f"Results file not found for Fold {fold + 1}.")
 
-# Calculate and display averages
+# Calculate and display averages for the folds
 if fold_results:
     results_df = pd.DataFrame(fold_results)
     avg_precision = results_df['precision'].mean()
     avg_recall = results_df['recall'].mean()
     avg_map50 = results_df['mAP50'].mean()
     avg_map5095 = results_df['mAP50-95'].mean()
-    
+
     print("\n=== Final Cross-Validation Results ===")
     print(f"Overall Average Precision: {avg_precision:.4f}")
     print(f"Overall Average Recall: {avg_recall:.4f}")
@@ -72,14 +70,14 @@ if fold_results:
 else:
     print("\nNo results available for averages.")
 
-# Print overall best fold
+# Print overall best fold and locate best model
 if best_fold is not None:
     print(f"\n=== Best Performing Fold: Fold {best_fold} ===")
     print(f"Best Fold mAP@0.5: {best_mAP50:.4f}")
     print(f"Best Fold mAP@0.95: {best_mAP5095:.4f}")
 
-    # Locate best.pt file
-    best_model_path = f'../results/kfold_yolov5l_100epochs/BCCM_fold_{best_fold - 1}/best.pt'
+    # Locate the best model
+    best_model_path = f'{fold_dir}/best.pt'
     
     if file_exists(best_model_path):
         print(f"Best model found at: {best_model_path}\n")
