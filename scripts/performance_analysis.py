@@ -15,7 +15,7 @@ for fold in range(num_folds):
 
     # Define the result file paths
     results_file = f'../results/kfold_yolov5l_100epochs/BCCM_fold_{fold}/results.csv'
-    fold_dir = f'../results/kfold_yolov5l_100epochs/BCCM_fold_{fold}/'
+    print(os.listdir(f'../results/kfold_yolov5l_100epochs/BCCM_fold_{fold}/'))
     # results_file = f'yolov5/runs/train/BCCM_fold_{fold}/results.csv'
     # print(os.listdir(f'yolov5/runs/train/BCCM_fold_{fold}/'))
 
@@ -50,7 +50,6 @@ for fold in range(num_folds):
                 best_fold = fold + 1
                 best_mAP50 = mAP50
                 best_mAP5095 = mAP5095
-
         else:
             print(f"Some metrics are missing in Fold {fold + 1} results.")
     else:
@@ -79,10 +78,18 @@ if best_fold is not None:
     print(f"Best Fold mAP@0.95: {best_mAP5095:.4f}")
 
     # Locate the best model
-    best_model_path = f'{fold_dir}/best.pt'
-    
+    best_model_path = f'../results/kfold_yolov5l_100epochs/BCCM_fold_{best_fold - 1}/best.pt'
+    # best_model_path = f'yolov5/runs/train/BCCM_fold_{best_fold - 1}/weights/best.pt'
+    # print(os.listdir(f'yolov5/runs/train/BCCM_fold_{best_fold - 1}/'))
+
     if file_exists(best_model_path):
         print(f"Best model found at: {best_model_path}\n")
+
+        # Run validation on the best model
+        # val_command = f"python val.py --weights {best_model_path} --data ../data.yaml --img 640 --batch 16"
+        # print(f"Running validation on best model: Fold {best_fold}")
+        # os.system(val_command)
+
     else:
         print(f"Warning: best.pt file not found at {best_model_path}\n")
 else:
