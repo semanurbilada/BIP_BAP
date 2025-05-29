@@ -2,5 +2,5 @@
 yolovenv
 # outputs-v5
 # outputs-v8
-best_bccd_v3.pt
+best_bccd_*.pt
 kfold_yolov5*
