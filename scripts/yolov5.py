@@ -1,7 +1,7 @@
 import glob, random, torch
 
 # Configurations
-WEIGHTS_PATH = '../weights/best_bccd_v3.pt'
+WEIGHTS_PATH = '../weights/best_bccd_4_v5.pt'
 TEST_IMAGES_PATH = '../test-images/*.jpg'
 OUTPUT_PROJECT = '../results/'
 OUTPUT_NAME = 'outputs-v5'
