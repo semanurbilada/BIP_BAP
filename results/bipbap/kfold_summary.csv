@@ -1,0 +1,6 @@
+fold,run_dir,weights_best,best_epoch,precision,recall,mAP50,mAP50_95
+1,/content/yolov5/runs/train/fold_1,/content/yolov5/runs/train/fold_1/weights/best.pt,22,0.84007,0.90957,0.91641,0.60768
+2,/content/yolov5/runs/train/fold_2,/content/yolov5/runs/train/fold_2/weights/best.pt,24,0.84917,0.91282,0.9337,0.63081
+3,/content/yolov5/runs/train/fold_3,/content/yolov5/runs/train/fold_3/weights/best.pt,24,0.85132,0.89833,0.91727,0.63693
+4,/content/yolov5/runs/train/fold_4,/content/yolov5/runs/train/fold_4/weights/best.pt,24,0.8546,0.90559,0.92432,0.62518
+5,/content/yolov5/runs/train/fold_5,/content/yolov5/runs/train/fold_5/weights/best.pt,24,0.89558,0.90495,0.93902,0.64671
