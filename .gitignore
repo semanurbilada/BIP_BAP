@@ -4,3 +4,4 @@ yolovenv
 # outputs-v8
 best_bccd_*.pt
 kfold_yolov5*
+*.zip
