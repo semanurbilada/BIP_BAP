@@ -2,14 +2,16 @@ import glob, random, torch
 
 # Configurations
 WEIGHTS_PATH = '../weights/best_bccd_4_v5.pt'
-TEST_IMAGES_PATH = '../test-images/*.jpg'
-OUTPUT_PROJECT = '../results/'
+TEST_IMAGES_PATH = '../data/test/*.jpg'
+OUTPUT_PROJECT = '../outputs/'
 OUTPUT_NAME = 'outputs-v5'
-# CONFIDENCE_THRESHOLD = 0.5
+CONFIDENCE_THRESHOLD = 0.5
 
 # Load the YOLOv5 model
 YOLO = torch.hub.load
+
 model = YOLO('ultralytics/yolov5', 'custom', path=WEIGHTS_PATH)
+model.conf=CONFIDENCE_THRESHOLD
 
 # Gather test images
 images_path = glob.glob(TEST_IMAGES_PATH)
