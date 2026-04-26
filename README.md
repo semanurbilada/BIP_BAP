@@ -105,12 +105,12 @@ The project follows a structured end-to-end pipeline for biomedical object detec
 ### Model Performance Overview
 
 <img src="outputs/final/confusion_matrix.png" width="45%">
-<img src="outputs/final/PR_curve.png" width="45%">
+<img src="outputs/final/PR_curve.png" width="50%">
 
 <br>
 
-<img src="outputs/final/F1_curve.png" width="45%">
-<img src="outputs/final/P_curve.png" width="45%">
+<img src="outputs/final/F1_curve.png" width="48%">
+<img src="outputs/final/P_curve.png" width="48%">
 
 </div>
 
@@ -120,7 +120,7 @@ The evaluation results are obtained using a **5-Fold Cross Validation strategy**
 
 - Mean and standard deviation metrics across folds are reported (`kfold_summary_mean_std.csv`)
 - Detailed fold-wise results are available (`kfold_summary.csv`)
-- Precision, Recall, and F1-score curves provide insight into model behavior
+- Precision, Recall and F1-score curves provide insight into model behavior
 
 ### Qualitative Results
 
@@ -128,19 +128,16 @@ The evaluation results are obtained using a **5-Fold Cross Validation strategy**
 
 <div align="center">
 
-<img src="outputs/final/val_batch0_labels.jpg" width="30%">
-<img src="outputs/final/val_batch0_pred.jpg" width="30%">
-
-<br>
-
-<img src="outputs/final/val_batch1_labels.jpg" width="30%">
-<img src="outputs/final/val_batch1_pred.jpg" width="30%">
+<img src="outputs/final/val_batch0_labels.jpg" width="48%">
+<img src="outputs/final/val_batch0_pred.jpg" width="48%">
 
 </div>
 
 <div align="justify">
 
 Sample predictions demonstrate the effectiveness of the detection pipeline, including bounding box localization and classification performance across different cell types.
+
+👉 <a href="outputs/final/">See additional qualitative and quantitative results!</a>
 
 </div>
 
@@ -240,12 +237,12 @@ It is recommended to run the notebook in a GPU-enabled environment for reproduci
 
 If you use BIP-BAP in your research, please cite:
 
-```
+```bibtex
 @software{BIP_BAP2026,
-  title = {BIP-BAP: Biomedical Image Processing with Attention-Enhanced YOLO},
-  author = {Volkan Uslan, Semanur Bilada, Abdulkerim Akten},
-  year = {2026},
-  url = {https://github.com/semanurbilada/BIP_BAP}
+  title   = {BIP-BAP: Attention-Enhanced YOLO for Biomedical Image Processing (BAP Project)},
+  author  = {Volkan Uslan, Semanur Bilada, Abdulkerim Akten},
+  year    = {2026},
+  url     = {https://github.com/semanurbilada/BIP_BAP}
 }
 ```
 
