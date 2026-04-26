@@ -1,7 +1,7 @@
 <h1 align="center">BIP BAP</h1>
 
 <p align="center">
-  <img src="data/bipbap-logo.png" width="100%" style="border-radius: 12px;">
+  <img src="data/bipbap-logo.png" width="70%" style="border-radius: 12px;">
 </p>
 
 <div align="center">
