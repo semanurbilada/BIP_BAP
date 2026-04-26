@@ -122,11 +122,11 @@ The evaluation results are obtained using a **5-Fold Cross Validation strategy**
 - Detailed fold-wise results are available (`kfold_summary.csv`)
 - Precision, Recall and F1-score curves provide insight into model behavior
 
-### Qualitative Results
-
 </div>
 
 <div align="center">
+
+### Qualitative Results
 
 <img src="outputs/final/val_batch0_labels.jpg" width="48%">
 <img src="outputs/final/val_batch0_pred.jpg" width="48%">
