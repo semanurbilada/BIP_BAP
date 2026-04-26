@@ -1,8 +1,8 @@
 <h1 align="center">BIP BAP</h1>
 
-<div align="center">
-<img src="https://cdn-icons-png.flaticon.com/512/14784/14784041.png" width="100" height="100" alt="icon">
-</div>
+<p align="center">
+  <img src="data/bipbap-logo.png" width="100%" style="border-radius: 12px;">
+</p>
 
 <div align="center">
 
