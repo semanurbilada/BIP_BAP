@@ -13,6 +13,7 @@
 * [Features](#features)
     * [Notes](#notes)
 * [Methodology](#methodology)
+* [Results](#results)
 * [Project Structure](#project-structure)
 * [How To Run?](#how-to-run)
 * [Licence](#licence)
@@ -97,6 +98,54 @@ The project follows a structured end-to-end pipeline for biomedical object detec
 
 ---
 
+## Results
+
+<div align="center">
+
+### Model Performance Overview
+
+<img src="outputs/final/confusion_matrix.png" width="45%">
+<img src="outputs/final/PR_curve.png" width="45%">
+
+<br>
+
+<img src="outputs/final/F1_curve.png" width="45%">
+<img src="outputs/final/P_curve.png" width="45%">
+
+</div>
+
+<div align="justify">
+
+The evaluation results are obtained using a **5-Fold Cross Validation strategy**, ensuring robust and generalized performance assessment.
+
+- Mean and standard deviation metrics across folds are reported (`kfold_summary_mean_std.csv`)
+- Detailed fold-wise results are available (`kfold_summary.csv`)
+- Precision, Recall, and F1-score curves provide insight into model behavior
+
+### Qualitative Results
+
+</div>
+
+<div align="center">
+
+<img src="outputs/final/val_batch0_labels.jpg" width="30%">
+<img src="outputs/final/val_batch0_pred.jpg" width="30%">
+
+<br>
+
+<img src="outputs/final/val_batch1_labels.jpg" width="30%">
+<img src="outputs/final/val_batch1_pred.jpg" width="30%">
+
+</div>
+
+<div align="justify">
+
+Sample predictions demonstrate the effectiveness of the detection pipeline, including bounding box localization and classification performance across different cell types.
+
+</div>
+
+---
+
 ## Project Structure
 
 The project follows this directory structure:
@@ -137,41 +186,53 @@ BIP_BAP/
 ---
 
 ## How To Run?
-1. Virtual environment setup:
+
+### 1. Local Environment Setup
+
+Create a virtual environment:
 ```
 python3 -m venv yolovenv
 ```
 
-2. (A) Activate environment: (Windows):
+Activate environment: <br>
+Windows:
 ```
 yolovenv/Scripts/activate
 ```
 
-2. (B) Activate environment: (Linux / MacOS):
+Linux / MacOS:
 ```
 source yolovenv/bin/activate
 ```
 
-3. Install dependencies:
-```
-pip install -r requirements.txt
-```
-or
+Install dependencies:
 ```
 pip3 install -r requirements.txt
 ```
 
-4. (A) Run the code samples in scripts directory:
+### 2. Run Inference Scripts (Local)
 ```
-python yolov5.py
+python3 core/yolov5.py
 ```
 or
 ```
-python3 yolov8.py
+python3 core/yolov8.py
 ```
 
-4. (B) Run main pipeline: (Google Colab T4 GPU or A100 GPU used in this project)
+### 3. Run Full Pipeline (Recommended)
+The complete pipeline, including:
+- Data preprocessing
+- K-Fold splitting
+- Attention-enhanced training (CBAM)
+- Evaluation
+is implemented in:
+```
 main.ipynb
+```
+
+### 📌 Note:
+This notebook was executed using **`Google Colab (T4 / A100 GPU)`** during the experiments. <br>
+It is recommended to run the notebook in a GPU-enabled environment for reproducibility
 
 ---
 
