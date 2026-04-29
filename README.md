@@ -118,8 +118,8 @@ The project follows a structured end-to-end pipeline for biomedical object detec
 
 The evaluation results are obtained using a **5-Fold Cross Validation strategy**, ensuring robust and generalized performance assessment.
 
-- Mean and standard deviation metrics across folds are reported (`kfold_summary_mean_std.csv`)
-- Detailed fold-wise results are available (`kfold_summary.csv`)
+- Mean and standard deviation metrics across folds are reported ([`kfold_summary_mean_std.csv`](https://github.com/semanurbilada/BIP_BAP/blob/main/outputs/final/kfold_summary_mean_std.csv))
+- Detailed fold-wise results are available ([`kfold_summary.csv`](https://github.com/semanurbilada/BIP_BAP/blob/main/outputs/final/kfold_summary.csv))
 - Precision, Recall and F1-score curves provide insight into model behavior
 
 </div>
