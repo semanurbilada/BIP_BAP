@@ -32,6 +32,15 @@ As part of the Piri Reis University Scientific Research Project (BAP), this init
 
 ---
 
+<div align="center">
+
+<b>📢 This project is associated with a paper accepted at  
+34th Signal Processing and Communications Applications Conference (SIU 2026).</b>
+
+</div>
+
+---
+
 ## Features
 
 - Detection and count for blood cell (BCCD).
@@ -235,8 +244,20 @@ It is recommended to run the notebook in a GPU-enabled environment for reproduci
 
 ## Citation
 
-If you use BIP-BAP in your research, please cite:
+If you use this project or its associated publication, please cite:
 
+### 📄 Paper
+```bibtex
+@inproceedings{Bilada2026SIU,
+  title     = {Mikroskopik Görüntülerde Kan Hücrelerinin YOLOv5 ile Saptanması},
+  author    = {Uslan, Volkan and Bilada, Semanur and Akten, Abdulkerim},
+  booktitle = {34th Conference on Signal Processing and Communications Applications (SIU)},
+  year      = {2026},
+  pages     = {1--4}
+}
+```
+
+### 💻 Software
 ```bibtex
 @software{BIP_BAP2026,
   title   = {BIP-BAP: Attention-Enhanced YOLO for Biomedical Image Processing (BAP Project)},
