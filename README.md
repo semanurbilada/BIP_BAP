@@ -250,6 +250,7 @@ If you use this project or its associated publication, please cite:
 ```bibtex
 @inproceedings{Bilada2026SIU,
   title     = {Mikroskopik Görüntülerde Kan Hücrelerinin YOLOv5 ile Saptanması},
+  note      = {English title: Detection of Blood Cells in Microscopic Images Using YOLOv5},
   author    = {Uslan, Volkan and Bilada, Semanur and Akten, Abdulkerim},
   booktitle = {34th Conference on Signal Processing and Communications Applications (SIU)},
   year      = {2026},
