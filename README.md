@@ -32,12 +32,17 @@ As part of the Piri Reis University Scientific Research Project (BAP), this init
 
 ---
 
-<div align="center">
+<p align="center">
 
-<b>📢 This project is associated with a paper accepted at  
-34th Signal Processing and Communications Applications Conference (SIU 2026).</b>
+<p align="center">
+  <a href="#"><img src="https://img.shields.io/badge/📄Preprint-Coming%20Soon-yellow?style=for-the-badge"></a>&nbsp;
+  <a href="https://siu2026.pirireis.edu.tr/"><img src="https://img.shields.io/badge/🌐Website-Visit-blue?style=for-the-badge&logo=googlechrome"></a>
+</p>
 
-</div>
+<h3 align="center">
+📢 This project is associated with a paper accepted at<br>
+34th Signal Processing and Communications Applications Conference (SIU 2026).
+</h3>
 
 ---
 
